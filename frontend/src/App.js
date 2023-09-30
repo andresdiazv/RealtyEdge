@@ -1,12 +1,18 @@
+// src/App.js
 import React from 'react';
-import HomePage from './pages/HomePage'; // Import HomePage component
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import PropertyDetailPage from './pages/PropertyDetailPage'; // Create this component to show individual property details.
 
-function App() {
-  return (
-    <div>
-      <HomePage /> {/* Use HomePage component */}
-    </div>
-  );
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/property/:id" element={<PropertyDetailPage />} />
+                <Route path="/" element={<HomePage />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

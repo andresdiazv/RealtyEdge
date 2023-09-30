@@ -1,0 +1,18 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+.card {
+    margin: 5mm 5mm 5mm 5mm
+}
+.card a {
+    text-decoration: none;
+    color: black;
+}
+.content-wrapper {
+    padding: 5vh;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+

@@ -1,17 +1,22 @@
-// src/components/Property.js
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Property.css'; // Importing CSS
 
 const Property = ({ property }) => {
     return (
-        <div>
-            <h2>Property Details</h2>
-            <img src={property.image} alt={property.address} />
-            <p>{property.address}</p>
-            <p>Price: {property.price}</p>
-            <p>Bedrooms: {property.bedrooms}</p>
-            <p>Bathrooms: {property.bathrooms}</p>
-            <p>Square Footage: {property.squareFootage}</p>
-            <p>Description: {property.description}</p>
+        <div className="card">
+            <Link to={`/property/${property.id}`}>
+                <div className="photo" style={{backgroundImage: `url(${property.image})`}}>
+                    <div className="time">2 days ago</div> {/* Modify this as per your logic */}
+                </div>
+                <div className="description">
+                    <div className="price">${property.price}</div>
+                    <div className="info">
+                        {property.bedrooms} bds {property.bathrooms} ba {property.squareFootage} sqft - For sale
+                    </div>
+                    <div className="address">{property.address}</div>
+                </div>
+            </Link>
         </div>
     );
 }
