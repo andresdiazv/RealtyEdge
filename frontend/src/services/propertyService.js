@@ -8,3 +8,12 @@ export const getFeaturedProperties = async () => {
         throw error; 
     }
 }
+
+export const getPropertyDetails = async (id) => {
+    try {
+        const response = await axios.get(`http://localhost:5000/api/properties/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
