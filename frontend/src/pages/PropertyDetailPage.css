@@ -3,8 +3,24 @@
     padding: 20px;
 }
 
-.property-details img {
-    max-width: 100%;
-    max-height: 400px;
+.property-detail-photo {
+    background-size: cover; /* change from contain to cover to remove white spaces */
+    background-position: center; /* ensures the image is centered */
+    background-repeat: no-repeat; /* ensures the image does not duplicate */
     display: block;
+    width: 100%;
+    height: 300px;
+}
+
+/* Adjustments for different screen widths can be maintained */
+@media (min-width: 600px) {
+    .property-detail-photo {
+        height: 400px;
+    }
+}
+
+@media (min-width: 900px) {
+    .property-detail-photo {
+        height: 500px;
+    }
 }

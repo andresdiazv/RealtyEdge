@@ -1,38 +1,43 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 5000; // You can use any port that suits your needs
+const port = 5000;
 
-// Dummy data, replace with your actual data fetching logic
+
 const properties = [
     {
       id: 1,
-      image: 'https://via.placeholder.com/150',
-      address: '1234 Street Name, City, State, Zip',
-      price: '300,000',
-      bedrooms: 3,
-      bathrooms: 2,
-      squareFootage: 1500,
+      address: '6772 SW 77th Ter, South Miami, FL 33143',
+      price: '2950000',
+      bedrooms: 4,
+      bathrooms: 3,
+      squareFootage: 2406,
     },
     {
       id: 2,
-      image: 'https://via.placeholder.com/150',
-      address: '5678 Street Name, City, State, Zip',
-      price: '150,000',
-      bedrooms: 1,
-      bathrooms: 1,
-      squareFootage: 700,
+      address: '5991 SW 85th St, South Miami, FL 33143',
+      price: '495000',
+      bedrooms: 5,
+      bathrooms: 7,
+      squareFootage: 4819,
     },
     
   ];  
 
-app.use(cors()); // Enable CORS for all routes
-app.use(express.json()); // Enable JSON parsing
+app.use(cors());
+app.use(express.json()); 
 
-// Define an endpoint to get featured properties
 app.get('/api/properties/featured', (req, res) => {
-  // Replace this with your actual logic to fetch featured properties.
   res.json(properties);
+});
+
+app.get('/api/properties/:id', (req, res) => {
+    const { id } = req.params;
+    const property = properties.find(p => p.id === Number(id));
+    if(!property){
+        return res.status(404).send('Property with the given ID was not found');
+    }
+    res.json(property);
 });
 
 app.listen(port, () => {

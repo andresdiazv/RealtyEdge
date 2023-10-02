@@ -1,0 +1,38 @@
+.property-calculations {
+    border: 1px solid lightgrey;
+    width: 50%;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .details {
+    padding: 10px;
+  }
+  
+  .calculator-section {
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+  }
+  
+  .full-width {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .split {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  label {
+    font-size: 14px;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* You can style your label, input, select or other elements as per your design preference */
+  
