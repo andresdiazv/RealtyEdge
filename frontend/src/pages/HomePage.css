@@ -13,9 +13,6 @@ body, html {
     text-decoration: none;
     color: black;
 }
-.content-wrapper {
-    padding: 5vh;
-}
 
 .cards-container {
     display: flex;
@@ -23,19 +20,22 @@ body, html {
     align-items: center;
 }
 
-/* For Tablet and above */
 @media (min-width: 600px) {
     .cards-container {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around; /* Adjust as per need */
     }
 }
 
 .card {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     /*darker shaddow below the card */
+    box-shadow: 2px 4px 5px 0 rgba(0,0,0,0.2);
     margin: 20px;
-    /* Add any other styling you need for your cards */
+    transition: 0.4s;
+    width: 300px;
+    border-radius: 5px;
+    
+    
 }
 
 
@@ -46,8 +46,8 @@ body, html {
     background-image: url('../assets/banner-image.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* This line ensures the image does not duplicate */
-    margin-bottom: 20px;
+    background-repeat: no-repeat;
+  
 }
 
 

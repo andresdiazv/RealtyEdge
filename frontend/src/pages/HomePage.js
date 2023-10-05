@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Property from '../components/Property'; // Import Property Component
-import { getFeaturedProperties } from '../services/propertyService'; // Import service to fetch properties
-import './HomePage.css'; // Import styling
+import Property from '../components/Property';
+import { getFeaturedProperties } from '../services/propertyService'; 
+import './HomePage.css'; 
 
 const HomePage = () => {
     const [properties, setProperties] = useState([]);
@@ -21,12 +21,13 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className='content-wrapper'>
-        <div className="banner-image"></div>
-            <div className='cards-container'>
-                {properties.map(property => (
-                    <Property key={property._id} property={property} />
-                ))}
+        
+        <div className="homepage-container">
+        <div className="banner-image" style={{ backgroundImage: `url(${bannerImage})` }}></div>
+        <div className='cards-container'>
+            {properties.map(property => (
+                <Property key={property._id} property={property} />
+            ))}
         </div>
     </div>
     );
