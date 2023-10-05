@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 5000;
+require('dotenv').config();
 
 
 const properties = [
@@ -39,6 +40,11 @@ app.get('/api/properties/:id', (req, res) => {
     }
     res.json(property);
 });
+
+app.get('/api/google-maps-key', (req, res) => {
+  res.json({ apiKey: process.env.GOOGLE_MAPS_API_KEY });
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
